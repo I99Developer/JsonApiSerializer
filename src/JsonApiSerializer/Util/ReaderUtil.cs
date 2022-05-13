@@ -27,11 +27,11 @@ namespace JsonApiSerializer.Util
             {
                 if (propName == PropertyNames.Id)
                 {
-                    if (lookAheadReader.TokenType != JsonToken.String)
-                        throw new JsonApiFormatException(lookAheadReader.FullPath,
-                            $"Expected to find string at {lookAheadReader.FullPath}",
-                            "The value of 'id' MUST be a string");
-                    id = (string)lookAheadReader.Value;
+                    // if (lookAheadReader.TokenType != JsonToken.String)
+                    //     throw new JsonApiFormatException(lookAheadReader.FullPath,
+                    //         $"Expected to find string at {lookAheadReader.FullPath}",
+                    //         "The value of 'id' MUST be a string");
+                    id = (string)lookAheadReader.Value.ToString();
                 }
 
                 else if (propName == PropertyNames.Type)
